@@ -10,10 +10,10 @@ public class SnakeLadder {
         int WINNIG_POSITION= 100;
                 while ( currentPosition < WINNIG_POSITION ) {
                     int diceNumber = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-                    System.out.println(diceNumber);
+                    //System.out.println(diceNumber);
 
                     int option = (int) (Math.floor(Math.random() * 10) % 3);
-                    System.out.println(option);
+                    //System.out.println(option);
                     if (option == IS_SNAKE) {
                         currentPosition = currentPosition - diceNumber;
                         if(currentPosition <0)
@@ -23,6 +23,9 @@ public class SnakeLadder {
                         System.out.println("snake" + currentPosition);
                     } else if (option == IS_LADDER) {
                         currentPosition = currentPosition + diceNumber;
+                        if(currentPosition > WINNIG_POSITION ){
+                            currentPosition= currentPosition - diceNumber;
+                        }
                         System.out.println("ladder" + currentPosition);
                     } else {
                         System.out.println("No play option");
