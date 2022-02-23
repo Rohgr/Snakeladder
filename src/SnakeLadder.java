@@ -8,6 +8,7 @@ public class SnakeLadder {
         int IS_SNAKE=2;
         int IS_LADDER=1;
         int WINNIG_POSITION= 100;
+        int diceCount = 0;
                 while ( currentPosition < WINNIG_POSITION ) {
                     int diceNumber = (int) (Math.floor(Math.random() * 10) % 6 + 1);
                     //System.out.println(diceNumber);
@@ -30,6 +31,8 @@ public class SnakeLadder {
                     } else {
                         System.out.println("No play option");
                     }
+                    diceCount++;
                 }
+                System.out.println("No of Times dice " +diceCount);
     }
 }
